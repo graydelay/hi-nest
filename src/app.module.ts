@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { MoviesController } from './movies/movies.controller';
-import { MoviesService } from './movies/movies.service';
+import { MoviesModule } from './movies/movies.module';
+import { AppController } from './app.controller';
 
 @Module({
-  imports: [],
-  controllers: [MoviesController], // url을 가져오고 function을 실행 / like express router
-  providers: [MoviesService],
+  imports: [MoviesModule],
+  controllers: [AppController], // url을 가져오고 function을 실행 / like express router
+  providers: [],
 }) // class를 위해 움직이는 함수(func)
 export class AppModule {}
